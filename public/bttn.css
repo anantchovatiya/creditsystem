@@ -1,0 +1,91 @@
+.loginbtn {
+    position: relative;
+    width: 100px;
+    padding: 2px 5px;
+    border-radius: 30px;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    background: transparent;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.loginbtn:hover {
+    background: #413b48;
+    box-shadow: 0 0 30px 5px #756a82;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.loginbtn:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+.loginbtn::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #9f6e6e;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.loginbtn:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.createbtn {
+    width: 146px;
+    height: 25px;
+    border: 0px;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: underline;
+    background: rgba(255, 255, 255, 0);
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.createbtn:hover {
+    border-radius: 10px;
+    color: rgb(218, 187, 228);
+    font-size: 0.9em;
+}

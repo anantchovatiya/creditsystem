@@ -1,0 +1,168 @@
+body {
+    background: rgb(146, 165, 198);
+    background: linear-gradient(90deg, rgba(146, 165, 198, 1) 0%, rgba(65, 59, 72, 1) 50%);
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create {
+    margin-left: 9%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 365px;
+    width: 400px;
+    background-color: #faf4f9;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 70px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 2px#000000;
+}
+
+.title {
+    font-size: 32px;
+    height: 5px;
+    text-align: center;
+    color: #3c3445;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.message {
+    color: rgba(21, 8, 8, 0.822);
+    font-size: 27px;
+    text-align: center;
+}
+
+.form label {
+    font-size: 20px;
+}
+
+input [type="password" i] {
+    margin-bottom: 15px;
+}
+
+.form label .input {
+    margin-bottom: 15px;
+}
+
+
+/* .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: royalblue;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  } */
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 95%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid+span {
+    color: green;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.submit:hover {
+    background-color: rgb(56, 90, 194);
+}
+
+.text {
+    width: 800px;
+    display: flex;
+    margin-top: 20%;
+    font-size: 100px;
+    font-weight: 900;
+    color: #faf4f9;
+    text-shadow: 2px 2px 20px#000000;
+}
+
+#text {
+    margin-top: 3%;
+    width: 800px;
+    height: 40px;
+    display: flex;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    color: #faf4f9;
+    text-shadow: 2px 2px 20px#000000;
+}
+
+#cur {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
