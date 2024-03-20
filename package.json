@@ -1,0 +1,19 @@
+{
+    "name": "project-1",
+    "version": "1.0.0",
+    "description": "22IT016 22IT004 22IT014",
+    "main": "main.js",
+    "scripts": {
+        "start": "nodemon main.js"
+    },
+    "author": "Anant Jasmin Anshul",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^3.1.9",
+        "express": "^4.18.2",
+        "mongodb": "^6.3.0",
+        "mongoose": "^8.1.2",
+        "nodemon": "^3.0.3",
+        "twilio": "^4.22.0"
+    }
+}

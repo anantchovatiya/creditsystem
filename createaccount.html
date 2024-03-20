@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="/createaccount.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="create">
+            <form class="form" method="post" action="/create">
+                <p class="title">Welcome to Our Credit System</p>
+                <p class="message">Create a Account!</p>
+                <nobr>
+                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>
+                <input type="radio" id="local" name="type" value="indian" for="local">Indians
+            </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>
+                <input type="radio" id="nri" name="type" value="nri" for="nri">NRIs
+            </label>
+                </nobr>
+
+                <label for="username">
+                <input required="" placeholder="" type="text" class="input" name="username">
+                <span>Username</span>
+            </label>
+
+                <label for="email">
+                <input required="" placeholder="" type="email" class="input" name="email">
+                <span>Email</span>
+            </label>
+
+                <label for="mobile">
+                <input required="" placeholder="" type="tel" class="input" name="mobile">
+                <span>Mobile Number</span>
+            </label>
+
+                <label for="password">
+                <input required="" placeholder="" type="password" class="input" name="password">
+                <span>Password</span>
+           </label>
+                <label>
+                <input required="" placeholder="" type="password" class="input">
+                <span>Confirm password</span>
+            </label>
+
+                <button class="submit" type="submit">Register</button>
+            </form>
+        </div>
+        <div class="text-container" id="textContainer">
+            <div class="text">
+                Unlock Financial Freedom
+            </div>
+
+            <div id="text">Create Your Account Today! </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+
+            var dataText = ["Create a Account Today!!", "Be a part of Credit System", "Feel free to Use"];
+
+
+            function typeWriter(text, i, fnCallback) {
+
+                if (i < text.length) {
+
+                    document.querySelector("#text").innerHTML = text.substring(0, i + 1) + '<span id="cur" aria-hidden="true"></span>';
+
+
+                    setTimeout(function() {
+                        typeWriter(text, i + 1, fnCallback);
+                    }, 100);
+                } else if (typeof fnCallback == 'function') {
+
+                    setTimeout(fnCallback, 700);
+                }
+            }
+
+
+            function StartTextAnimation(i) {
+                if (typeof dataText[i] == 'undefined') {
+
+                    setTimeout(function() {
+                        StartTextAnimation(0);
+                    }, 2000);
+                } else {
+
+                    if (i < dataText[i].length) {
+
+                        typeWriter(dataText[i], 0, function() {
+
+                            StartTextAnimation(i + 1);
+                        });
+                    }
+                }
+            }
+
+
+            StartTextAnimation(0);
+        });
+    </script>
+</body>
+
+</html>

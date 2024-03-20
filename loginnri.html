@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="create">
+            <form class="form" action="/login_nri" method="post">
+                <p class="title">Welcome to Our Credit System</p>
+                <p class="message">Login to your account!</p>
+
+
+                <label for="username">
+                <input required="" placeholder="" type="text" class="input" name="name">
+                <span>Username</span>
+
+                <label for="password">
+                <input required="" placeholder="" type="password" class="input" name="password">
+                <span>Password</span>
+           </label>
+
+                <button class="submit" type="submit">Login</button>
+            </form>
+        </div>
+        <div class="text-container" id="textContainer">
+            <div class="text">
+                Login to Your Financial World.
+            </div>
+
+            <div id="text"> </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+
+            var dataText = ["Secure Access", "Seamless Banking", "Feel free to Use"];
+
+
+            function typeWriter(text, i, fnCallback) {
+
+                if (i < text.length) {
+
+                    document.querySelector("#text").innerHTML = text.substring(0, i + 1) + '<span id="cur" aria-hidden="true"></span>';
+
+
+                    setTimeout(function() {
+                        typeWriter(text, i + 1, fnCallback);
+                    }, 100);
+                } else if (typeof fnCallback == 'function') {
+
+                    setTimeout(fnCallback, 700);
+                }
+            }
+
+
+            function StartTextAnimation(i) {
+                if (typeof dataText[i] == 'undefined') {
+
+                    setTimeout(function() {
+                        StartTextAnimation(0);
+                    }, 2000);
+                } else {
+
+                    if (i < dataText[i].length) {
+
+                        typeWriter(dataText[i], 0, function() {
+
+                            StartTextAnimation(i + 1);
+                        });
+                    }
+                }
+            }
+
+
+            StartTextAnimation(0);
+        });
+    </script>
+</body>
+
+</html>

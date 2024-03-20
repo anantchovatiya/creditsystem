@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contact Us - Responsive Page Design</title>
+    <link rel="shortcut icon" type="image/jpg" href="/photo/news2.png" />
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+    </style>
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="navbar">
+                <div>
+                    <a><img class="logo" src="./photo/logo.png" alt="Logo"></a>
+                </div>
+                <nav>
+
+                    <ul>
+                        <li><a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
+                        <li><a href="user.html" style="text-decoration: none; color: azure;">Users</a></li>
+                        <li><a href="nri.html" style="text-decoration: none;color: white;">NRIs</a></li>
+                        <li><a href="contact.html" class="active" style="text-decoration: none;color: white;">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="container2">
+
+
+
+                <div class="cont">
+                    <div class="container">
+                        <div class="contactInfo">
+                            <div>
+                                <h2>Contact Info</h2>
+                                <ul class="info">
+                                    <li>
+                                        <span><img src="/photo/location.png"></span>
+                                        <span>New Delhi<br>
+                                    Metro road, Sector 16<br>
+                                    Near DLF shopping
+                                    11472</span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span><img src="/photo/mail.png"></span>
+                                        <span><a href = "mailto: anantchovatiya@gmail.com">anantchovatiya@gmail.com</a><br>
+                                <a href = "mailto: anshulavaiya@gmail.com">anshulavaiya@gmail.com</a><br>
+                                <a href = "mailto: jasminchaudhary@gmail.com">jasminchaudhary@gmail.com</a></span>
+                                    </li>
+                                    <li>
+                                        <span><img src="/photo/call.png"></span>
+                                        <span>9428871141<br>
+                            9104800589<br>
+                        8238784521</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <ul class="sci">
+                                <li>
+                                    <a href="#"><img src="/photo/1.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/photo/3.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/photo/2.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/photo/5.png"></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="contactForm">
+                            <h2>Send a Message</h2>
+                            <div class="formBox">
+                                <div class="inputBox w50">
+                                    <input type="text" name="" required>
+                                    <span>First Name</span>
+                                </div>
+                                <div class="inputBox w50">
+                                    <input type="text" required>
+                                    <span>Last Name</span>
+                                </div>
+                                <div class="inputBox w50">
+                                    <input type="email" required>
+                                    <span>Email Address</span>
+                                </div>
+                                <div class="inputBox w50">
+                                    <input type="text" required>
+                                    <span>Mobile Number</span>
+                                </div>
+                                <div class="inputBox w100">
+                                    <textarea id="ebody" required></textarea>
+                                    <span>Write your message here...</span>
+                                </div>
+                                <div class="inputBox w100">
+                                    <input type="submit" value="Send" onclick="sendmail()">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/contact.js"></script>
+</body>
+
+</html>
