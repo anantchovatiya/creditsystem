@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- <link rel="stylesheet" href="dashboard.css"> -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="d1">
+            <span class="user">Welcome, <%= username %></span>
+            <span class="cs">CREDIT SYSTEM</span>
+            <span class="das">DASHBOARD</span>
+        </div>
+        <div class="d2">
+            <div class="infomain">
+                <div class="info" id="name">
+                    <p class="infotitle">Name</p>
+                    <p class="infoans">
+                        <%= username %>
+                    </p>
+                </div>
+                <div class="info" id="balance">
+                    <p class="infotitle">Balance (INR)</p>
+                    <p class="infoans">
+                        <%=  bal %>
+                    </p>
+
+                </div>
+                <div class="info" id="accno">
+                    <p class="infotitle">Account No</p>
+                    <p class="infoans">
+                        <%=  accno %>
+                    </p>
+
+                </div>
+                <div class="info" id="nat">
+                    <p class="infotitle">Nationality</p>
+                    <p class="infoans">
+                        <%=  type %>
+                    </p>
+                </div>
+            </div>
+            <div class="money">
+                <p class="infotitle">Money Transfer</p>
+                <form action="/transfer" method="POST">
+                    <label for="from_account" class="infoans">From Account:</label>
+                    <input type="text" id="from_account" class="textbox" name="from_account" value='<%=  accno %>' readonly><br>
+                    <label for="to_account" class="infoans">To Account:</label>
+                    <input type="text" id="to_account" class="textbox" name="to_account"><br>
+                    <label for="amount" class="infoans">Amount:</label>
+                    <input type="text" id="amount" class="textbox" name="amount"><br>
+                    <button id="transbtn" type="submit">Transfer</button>
+                    <!-- <input type="submit" id="transbtn" class="transbtn" value="Transfer"> -->
+                </form>
+            </div>
+        </div>
+        <div class="d3">
+            <div class="tran transaction-history">
+                <p class="loandetail">Transaction Details</p><br>
+                <div class="tbl custom-scrollbar">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="infotitle">Date</th>
+                                <th class="infotitle">Description</th>
+                                <th class="infotitle">Amount</th>
+                                <th class="infotitle">Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% tran.forEach(item => { %>
+                                <tr>
+                                    <td class="infoans">
+                                        <%= item.date.toISOString().split('T')[0] %>
+                                    </td>
+                                    <td class="infoans">
+                                        <%= item.status %>
+                                    </td>
+                                    <td class="infoans">
+                                        <%= item.amt %>
+                                    </td>
+                                    <td class="infoans">
+                                        <%= item.name.toLocaleUpperCase() %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="loan">
+                <p class="loandetail">Loan Details</p><br>
+                <span class="infotitle" style="font-size: 25px;">Amount (INR): </span> <span class="infoansl"><%= loanamt %></span><br><br>
+                <span class="infotitle" style="font-size: 25px;">Duration (Months): </span><span class="infoansl"><%= loandur %></span><br><br>
+                <span class="infotitle" style="font-size: 25px;">Type: </span><span class="infoansl"><%= loantype %></span><br><br>
+                <span class="infotitle" style="font-size: 25px;">Interest: </span><span class="infoansl"><span id="intrest"></span></span><br><br>
+                <span class="infotitle" style="font-size: 25px;">Monthly Payment (INR): </span><span class="infoansl"><span id="monpay"></span></span>
+                <div class="apploan">
+                    <p class="infoloan">Need a Loan ?</p>
+                    <!-- <a href="/loan" class="apply" >Apply Now!!</a> -->
+                    <a href="/loan" class="button">
+                        Apply Now!
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                          <path
+                            clip-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        let loanpayment = document.getElementById("monpay");
+        let intrest = document.getElementById("intrest");
+
+        function calculateMonthlyPayment(principal, annualInterestRate, loanTermInYears) {
+
+            let monthlyPayment = (principal / loanTermInYears / 12) + ((principal * annualInterestRate * loanTermInYears) / 100) / loanTermInYears / 12;
+
+            return monthlyPayment.toFixed(2);
+        }
+
+
+        let principal = parseInt('<%= loanamt %>');
+        let annualInterestRate = 0;
+        let type = '<%= loantype %>';
+        if (type == "Personal") {
+            annualInterestRate = 4;
+        } else if (type == "Business") {
+            annualInterestRate = 5;
+        } else if (type == "Education") {
+            annualInterestRate = 2;
+        } else if (type == "Other") {
+            annualInterestRate = 6;
+        } else {
+            annualInterestRate = 0;
+        }
+
+        let loanTermInYears = parseInt('<%= loandur %>') / 12;
+        console.log(principal, annualInterestRate, loanTermInYears)
+        let monthlyPayment = calculateMonthlyPayment(principal, annualInterestRate, loanTermInYears);
+        if (isNaN(monthlyPayment)) {
+            loanpayment.innerHTML = "0";
+        } else {
+            loanpayment.innerHTML = monthlyPayment;
+        }
+
+        intrest.innerHTML = annualInterestRate + "%";
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <link rel="stylesheet" href="/loan.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>CREDIT SYSTEM</h1>
+        <p>Empowering Your Financial Future</p>
+    </div>
+    <div class="container">
+        <div class="div-1">
+            <p class="loantxt">Unlock Your Dreams</p>
+            <p class="loantxt">Apply Today!</p>
+            <img src="/photo/loanback.png" alt="">
+            <p class="footer">Thank you for considering our loan services. Please complete the application form accurately and thoroughly.</p>
+        </div>
+        <div class="div-2">
+            <div class="form-container">
+                <div class="image-container">
+                    <img src="/photo/loan.jpg" alt="Loan Application Image">
+                </div>
+                <div class="form-content">
+                    <h2>Loan Application Form</h2>
+                    <form action="/loan" method="POST">
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                            <label for="fullname">Account No:</label><br>
+                            <input type="text" id="accno" name="accno" value="<%= accno %>" readonly><br><br>
+
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email" value="<%= email %>" readonly><br><br>
+
+                            <label for="phone">Phone Number:</label><br>
+                            <input type="tel" id="phone" name="phone" value="<%= mobile %>" readonly><br><br>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Loan Details</legend>
+                            <label for="amount">Loan Amount:</label><br>
+                            <input type="number" id="amount" name="amount" required><br><br>
+
+                            <label for="term">Loan Term (months):</label><br>
+                            <input type="number" id="term" name="term" required><br><br>
+
+                            <label for="purpose">Purpose of Loan:</label><br>
+                            <select id="purpose" name="type" required>
+                                <option value="">Select</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Business">Business</option>
+                                <option value="Education">Education</option>
+                                <option value="Other">Other</option>
+                            </select><br><br>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Terms and Conditions</legend>
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <span>I agree to the terms and conditions</span><br><br>
+                        </fieldset>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
