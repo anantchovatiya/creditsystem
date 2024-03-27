@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Contact Us - Responsive Page Design</title>
     <link rel="shortcut icon" type="image/jpg" href="/photo/news2.png" />
+    <link rel="stylesheet" href="navbarres.css">
     <link rel="stylesheet" href="nav.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
@@ -24,11 +25,12 @@
     <div class="main">
         <div class="header">
             <div class="navbar">
-                <div>
+                <div id="logo">
                     <a><img class="logo" src="./photo/logo.png" alt="Logo"></a>
+                    <img class="hamburger" src="./photo/hamburger.png" alt="" onclick="ham()">
                 </div>
                 <nav>
-
+                    <img class="close" src="./photo/close.png" alt="" onclick="cls()">
                     <ul>
                         <li><a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
                         <li><a href="user.html" style="text-decoration: none; color: azure;">Users</a></li>
@@ -123,6 +125,18 @@
         </div>
     </div>
     <script src="./js/contact.js"></script>
+    <script>
+        function ham() {
+            document.querySelector("nav").style.display = "block";
+            document.querySelector("nav").style.right = "0";
+            document.querySelector(".close").style.right = "5px";
+
+        }
+
+        function cls() {
+            document.querySelector("nav").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
