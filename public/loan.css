@@ -187,3 +187,20 @@ input[type="submit"]:hover {
         padding: 10px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .header h1 {
+        font-size: 30px;
+        letter-spacing: 12px;
+        margin-bottom: 10px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .div-1 {
+        display: none;
+    }
+    .div-2 {
+        width: 100%;
+    }
+}
