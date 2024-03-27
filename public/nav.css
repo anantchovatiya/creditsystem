@@ -47,3 +47,12 @@ nav ul li:after {
 nav ul li:hover::after {
     width: 100%;
 }
+
+#logo {
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px;
+    width: 230px;
+}
