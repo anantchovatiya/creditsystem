@@ -10,17 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="nri.css">
+    <link rel="stylesheet" href="navbarres.css">
 </head>
 
 <body>
     <div class="main">
         <div class="header">
             <div class="navbar">
-                <div>
+                <div id="logo">
                     <a><img class="logo" src="./photo/logo.png" alt="Logo"></a>
+                    <img class="hamburger" src="./photo/hamburger.png" alt="" onclick="ham()">
                 </div>
                 <nav>
-
+                    <img class="close" src="./photo/close.png" alt="" onclick="cls()">
                     <ul>
                         <li><a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
                         <li><a href="user.html" style="text-decoration: none; color: azure;">Users</a></li>
@@ -51,7 +53,7 @@
 
                             </div>
                             <div class="nri-cont">
-                                <span id="text-d">As a Non-Resident Indian, benefit from our specialized banking services designed to meet your global financial needs.</span>
+                                <p id="text-d">As a Non-Resident Indian, benefit from our specialized banking services designed to meet your global financial needs.</p>
                                 <br><br>
                                 <p class="text-nri">Explore a range of services, from savings accounts to loans, designed to help you achieve your financial goals.</p>
                             </div>
@@ -90,6 +92,18 @@
 
         </div>
     </div>
+    <script>
+        function ham() {
+            document.querySelector("nav").style.display = "block";
+            document.querySelector("nav").style.right = "0";
+            document.querySelector(".close").style.right = "5px";
+
+        }
+
+        function cls() {
+            document.querySelector("nav").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
