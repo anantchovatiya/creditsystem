@@ -14,18 +14,21 @@
     <div class="main">
         <div class="header">
             <div class="navbar">
-                <div>
+                <div id="logo">
                     <a><img class="logo" src="./photo/logo.png" alt="Logo"></a>
+                    <img class="hamburger" src="./photo/hamburger.png" alt="" onclick="ham()">
                 </div>
                 <nav>
-
+                    <img class="close" src="./photo/close.png" alt="" onclick="cls()">
                     <ul>
+
                         <li><a href="index.html" class="active" style="text-decoration: none; color: white;">Home</a></li>
                         <li><a href="user.html" style="text-decoration: none; color: azure;">Users</a></li>
                         <li><a href="nri.html" style="text-decoration: none;color: white;">NRIs</a></li>
                         <li><a href="contact.html" style="text-decoration: none;color: white;">Contact Us</a></li>
                     </ul>
                 </nav>
+
             </div>
             <div class="container2">
                 <!-- <a class="img"></a>  -->
@@ -62,6 +65,18 @@
             </div>
         </div>
     </div>
+    <script>
+        function ham() {
+            document.querySelector("nav").style.display = "block";
+            document.querySelector("nav").style.right = "0";
+            document.querySelector(".close").style.right = "5px";
+
+        }
+
+        function cls() {
+            document.querySelector("nav").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
