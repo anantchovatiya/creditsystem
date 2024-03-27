@@ -282,3 +282,44 @@ td {
     background: #555;
     /* color of the scrollbar handle on hover */
 }
+
+@media screen and (max-width: 600px) {
+    .user {
+        font-size: 17px;
+    }
+    .cs {
+        display: none;
+    }
+    .das {
+        letter-spacing: 9px;
+        font-size: 31px;
+    }
+    .d2 {
+        flex-direction: column;
+    }
+    .infomain {
+        width: 100%;
+    }
+    .info {
+        flex: 0 0 47%;
+        box-sizing: border-box;
+    }
+    .money {
+        width: 92%;
+        margin-top: 20px;
+    }
+    .d3 {
+        flex-direction: column;
+    }
+    .loan {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    .infoans {
+        font-size: 13px;
+    }
+    .infotitle {
+        padding: 2px;
+        font-size: 15px;
+    }
+}
