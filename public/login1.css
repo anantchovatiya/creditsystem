@@ -178,7 +178,11 @@ body {
         display: none;
     }
     .header {
-        height: 130% !important;
+        height: 100vh !important;
+        overflow-y: scroll;
+    }
+    .header::before {
+        height: 135vh;
     }
     p {
         text-align: center;
