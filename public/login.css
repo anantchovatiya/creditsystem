@@ -166,3 +166,24 @@ input [type="password" i] {
         border-color: transparent;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .main {
+        flex-direction: column-reverse;
+    }
+    .text {
+        width: 100%;
+        font-size: 50px;
+        text-align: center;
+    }
+    #text {
+        width: 100%;
+        font-size: 35px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .create {
+        margin-left: 0;
+    }
+}
