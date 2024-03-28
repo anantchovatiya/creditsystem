@@ -184,6 +184,7 @@ h2 {
         margin-top: -160px;
         overflow-y: scroll;
         height: 69vh;
+        padding: 5px;
     }
     .header2 {
         margin-top: -180px;
