@@ -8,15 +8,17 @@ const app = express();
 const port = 3000
 const nri = require('./routes/nri')
 const local = require('./routes/user')
-const url = "mongodb+srv://user1:1234@cluster0.rkkycsk.mongodb.net/";
+const url = "mongodb+srv://anantchovatiya:Uf1bZiZGko7ZJ22s@cluster0.rkkycsk.mongodb.net/";
 const accountSid = 'AC18227acd8181efea7a1da4ff8b8e9f3e';
-const authToken = '8ba609fca27ef8c7e89a5056a773ceac';
+const authToken = '1e7f8587e7f6ce70d2c2671cb16b6092';
 const client = require('twilio')(accountSid, authToken);
+const favicon = require('serve-favicon');
 let curraccno;
 let currphone;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
+app.use(favicon(path.join(__dirname, './favicon.ico')));
 
 main().catch(err => console.log(err));
 
@@ -263,36 +265,6 @@ app.post("/loan", async(req, res) => {
     res.render("mess", { mess: "Loan Applied sucessfully!!" })
 })
 
-app.post("/deposit", async(req, res) => {
-    const data = req.body;
-    let ans = await user.find({ accountno: curraccno });
-    user.updateOne({ accountno: curraccno }, { $set: { balance: parseInt(ans[0].balance) + parseInt(data.amount) } }).exec();
-    client.messages
-        .create({
-            body: 'Your request for Deposit has been successfully of ' + data.convertedAmount + 'INR. Your Amount will be credited soon in your account in next 24 hrs',
-            from: '+15104048408',
-            to: '+91' + currphone
-        })
-    res.render("mess", { err: "Deposit Request placed sucessfully!!" })
-    setTimeout(() => {
-        user.updateOne({ accountno: curraccno }, { $set: { balance: parseInt(ans[0].balance) + parseInt(data.convertedAmount) } }).exec();
-        const trans = new Transactions({
-            amt: data.convertedAmount,
-            to: data.accountNumber,
-            from: curraccno,
-            name: "Credit System",
-            status: "Deposit"
-
-        })
-        trans.save();
-        client.messages
-            .create({
-                body: 'Your Request amount ' + data.convertedAmount + ' INR has been successfully credited into your Account. Kindly check your account balance.',
-                from: '+15104048408',
-                to: '+91' + currphone
-            })
-    }, 6000);
-})
 
 app.post("/withdraw", async(req, res) => {
     const data = req.body;
