@@ -285,14 +285,14 @@ td {
 
 @media screen and (max-width: 600px) {
     .user {
-        font-size: 17px;
+        font-size: 13px;
     }
     .cs {
         display: none;
     }
     .das {
         letter-spacing: 9px;
-        font-size: 31px;
+        font-size: 19px;
     }
     .d2 {
         flex-direction: column;
@@ -301,11 +301,11 @@ td {
         width: 100%;
     }
     .info {
-        flex: 0 0 47%;
+        flex: 0 0 46%;
         box-sizing: border-box;
     }
     .money {
-        width: 92%;
+        width: 90%;
         margin-top: 20px;
     }
     .d3 {
@@ -321,5 +321,8 @@ td {
     .infotitle {
         padding: 2px;
         font-size: 15px;
+    }
+    .tran {
+        width: 87.5%;
     }
 }
