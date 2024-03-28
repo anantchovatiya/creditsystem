@@ -169,6 +169,7 @@ input [type="password" i] {
         flex-direction: column-reverse;
     }
     .text {
+        margin-top: 0;
         width: 100%;
         font-size: 50px;
         text-align: center;
@@ -179,6 +180,7 @@ input [type="password" i] {
         text-align: center;
         display: flex;
         justify-content: center;
+        margin-bottom: 40px;
     }
     .create {
         margin-left: 0;
