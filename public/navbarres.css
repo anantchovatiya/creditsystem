@@ -21,10 +21,11 @@
     nav {
         display: none;
         position: absolute;
-        background-color: #312b2bbb;
+        background-color: #545050f7;
+        height: 100% !important;
+        width: 50%;
         right: -300px;
         top: 0px;
-        height: 250px !important;
         z-index: 2000;
     }
     .hamburger {
