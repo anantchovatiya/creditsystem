@@ -179,8 +179,11 @@
     .info-nri {
         margin-left: 0;
         text-align: left;
-        margin-top: 128px;
+        margin-top: 190px;
         width: 82%;
         height: 200px;
+    }
+    .detail {
+        height: 100%;
     }
 }
