@@ -18,7 +18,7 @@ let currphone;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
-app.use(favicon(path.join(__dirname, './favicon.ico')));
+// app.use(favicon(path.join(__dirname, './favicon.ico')));
 
 main().catch(err => console.log(err));
 
